@@ -15,6 +15,9 @@
 		263F3EAE299650D40095F0EA /* ConsultantUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263F3EAD299650D40095F0EA /* ConsultantUITests.swift */; };
 		263F3EB0299650D40095F0EA /* ConsultantUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263F3EAF299650D40095F0EA /* ConsultantUITestsLaunchTests.swift */; };
 		263F3EBE29978FE90095F0EA /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263F3EBD29978FE90095F0EA /* ButtonStyle.swift */; };
+		263F3EC12997AB040095F0EA /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263F3EC02997AB040095F0EA /* SignInView.swift */; };
+		263F3EC42997D4280095F0EA /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263F3EC32997D4280095F0EA /* SignUpView.swift */; };
+		263F3EC62997EF2C0095F0EA /* CheckboxToggleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263F3EC52997EF2C0095F0EA /* CheckboxToggleStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,9 @@
 		263F3EAD299650D40095F0EA /* ConsultantUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultantUITests.swift; sourceTree = "<group>"; };
 		263F3EAF299650D40095F0EA /* ConsultantUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultantUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		263F3EBD29978FE90095F0EA /* ButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyle.swift; sourceTree = "<group>"; };
+		263F3EC02997AB040095F0EA /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		263F3EC32997D4280095F0EA /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		263F3EC52997EF2C0095F0EA /* CheckboxToggleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxToggleStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +103,8 @@
 		263F3E90299650D30095F0EA /* Consultant */ = {
 			isa = PBXGroup;
 			children = (
+				263F3EC22997D4000095F0EA /* SignUp */,
+				263F3EBF2997AADF0095F0EA /* SignIn */,
 				263F3EBC29978FC50095F0EA /* Utils */,
 				263F3E91299650D30095F0EA /* ConsultantApp.swift */,
 				263F3E93299650D30095F0EA /* ContentView.swift */,
@@ -136,8 +144,25 @@
 			isa = PBXGroup;
 			children = (
 				263F3EBD29978FE90095F0EA /* ButtonStyle.swift */,
+				263F3EC52997EF2C0095F0EA /* CheckboxToggleStyle.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		263F3EBF2997AADF0095F0EA /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				263F3EC02997AB040095F0EA /* SignInView.swift */,
+			);
+			path = SignIn;
+			sourceTree = "<group>";
+		};
+		263F3EC22997D4000095F0EA /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				263F3EC32997D4280095F0EA /* SignUpView.swift */,
+			);
+			path = SignUp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -271,7 +296,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				263F3EBE29978FE90095F0EA /* ButtonStyle.swift in Sources */,
+				263F3EC42997D4280095F0EA /* SignUpView.swift in Sources */,
 				263F3E94299650D30095F0EA /* ContentView.swift in Sources */,
+				263F3EC12997AB040095F0EA /* SignInView.swift in Sources */,
+				263F3EC62997EF2C0095F0EA /* CheckboxToggleStyle.swift in Sources */,
 				263F3E92299650D30095F0EA /* ConsultantApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

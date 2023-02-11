@@ -7,27 +7,30 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var selection: Int? = nil
+    
     var body: some View {
-        VStack {
-            Text("Consultant")
-                .font(
+        NavigationView {
+            VStack {
+                Text("Consultant")
+                    .font(
                         .system(size: 34)
                         .weight(.heavy)
-
                     )
-            Image("jobs-abstract")
-                .resizable()
-                .scaledToFit()
-            Button("Log in") {
-                //takes us to the next view
+                Image("jobs-abstract")
+                    .resizable()
+                    .scaledToFit()
+                NavigationLink("Sign in") {
+                    SignInView()
+                }
+                .buttonStyle(PurpleButton())
+                NavigationLink("Sign up") {
+                    SignUpView()
+                }
+                .buttonStyle(PurpleButton())
+                .padding()
             }
-            .buttonStyle(PurpleButton())
-            Button("Sign up") {
-                //takes us to the next view
-            }
-            .buttonStyle(PurpleButton())
         }
-        .padding()
     }
 }
 
