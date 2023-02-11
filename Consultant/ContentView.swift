@@ -2,7 +2,6 @@
 //  ContentView.swift
 //  Consultant
 //
-//  Created by Delyana Raykova on 10.02.23.
 //
 
 import SwiftUI
@@ -10,10 +9,23 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("ConsultantApp")
+            Text("Consultant")
+                .font(
+                        .system(size: 34)
+                        .weight(.heavy)
+
+                    )
+            Image("jobs-abstract")
+                .resizable()
+                .scaledToFit()
+            Button("Log in") {
+                //takes us to the next view
+            }
+            .buttonStyle(PurpleButton())
+            Button("Sign up") {
+                //takes us to the next view
+            }
+            .buttonStyle(PurpleButton())
         }
         .padding()
     }
