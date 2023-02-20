@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct SignUpView: View {
     @State private var username: String = ""
@@ -14,6 +15,7 @@ struct SignUpView: View {
     @State private var lastName: String = ""
     @State private var isConsultant: Bool = false
     @State private var isEmployer: Bool = false
+    @State private var userIsSignedIn = false
     
     var body: some View {
         VStack{
@@ -35,13 +37,27 @@ struct SignUpView: View {
                 .toggleStyle(CheckboxToggleStyle())
                 .padding()
             Button("Create your profile") {
-                //check if the credentials are valid and cover requirements
+                signUp()
             }
-                .buttonStyle(PurpleButton())
-                
-                
+            .buttonStyle(PurpleButton())
+            
+            NavigationLink(destination: HomeView(), isActive: $userIsSignedIn){
+                EmptyView()
+            }
+            }
+    }
+    
+    func signUp() {
+        Auth.auth().createUser(withEmail: username, password: password) { (result,error) in
+            if error != nil { //password must be at least six characters
+                print(error?.localizedDescription ?? "")
+            } else {
+                print("success")
+                userIsSignedIn = true
             }
         }
+        //add to database as employer and/or consultant
+    }
 }
 
 struct SignUpView_Previews: PreviewProvider {

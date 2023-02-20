@@ -7,7 +7,6 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var selection: Int? = nil
     
     var body: some View {
         NavigationView {
