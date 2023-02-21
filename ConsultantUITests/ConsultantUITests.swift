@@ -2,7 +2,6 @@
 //  ConsultantUITests.swift
 //  ConsultantUITests
 //
-//  Created by Delyana Raykova on 10.02.23.
 //
 
 import XCTest

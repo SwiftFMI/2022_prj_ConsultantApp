@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>885044447229-0iki2qu9e0rd9nsj4dhr4dlkjapohe3j.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.885044447229-0iki2qu9e0rd9nsj4dhr4dlkjapohe3j</string>
+	<key>API_KEY</key>
+	<string>AIzaSyARDTLaCzSLPuEx67rA4Kw2NnwHW_1D0f8</string>
+	<key>GCM_SENDER_ID</key>
+	<string>885044447229</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>iOSCourse.Cosultant</string>
+	<key>PROJECT_ID</key>
+	<string>consultant-c00c2</string>
+	<key>STORAGE_BUCKET</key>
+	<string>consultant-c00c2.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:885044447229:ios:8f9f52374ebd549549bb94</string>
+</dict>
+</plist>
