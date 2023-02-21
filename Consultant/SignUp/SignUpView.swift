@@ -39,7 +39,7 @@ struct SignUpView: View {
             Button("Create your profile") {
                 signUp()
             }
-            .buttonStyle(PurpleButton())
+            .buttonStyle(BlueButton())
             
             NavigationLink(destination: HomeView(), isActive: $userIsSignedIn){
                 EmptyView()

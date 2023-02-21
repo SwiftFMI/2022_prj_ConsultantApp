@@ -27,7 +27,7 @@ struct SignInView: View {
                 Button("Sign in your profile"){
                     signIn()
                 }
-                .buttonStyle(PurpleButton())
+                .buttonStyle(BlueButton())
                 
                     NavigationLink(destination: HomeView(), isActive: $successfulSignIn){
                         EmptyView()

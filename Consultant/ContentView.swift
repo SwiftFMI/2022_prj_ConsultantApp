@@ -11,7 +11,7 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             VStack {
-                Text("Consultant")
+                Text("CONSULTANT")
                     .font(
                         .system(size: 34)
                         .weight(.heavy)
@@ -22,11 +22,11 @@ struct ContentView: View {
                 NavigationLink("Sign in") {
                     SignInView()
                 }
-                .buttonStyle(PurpleButton())
+                .buttonStyle(BlueButton())
                 NavigationLink("Sign up") {
                     SignUpView()
                 }
-                .buttonStyle(PurpleButton())
+                .buttonStyle(BlueButton())
                 .padding()
             }
         }

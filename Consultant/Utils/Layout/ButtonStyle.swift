@@ -6,11 +6,11 @@
 
 import SwiftUI
 
-struct PurpleButton: ButtonStyle {
+struct BlueButton: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .padding()
-            .background(Color.purple)
+            .background(Color("blue"))
             .foregroundColor(.white)
             .clipShape(Capsule())
             .scaleEffect(configuration.isPressed ? 1.2 : 1)

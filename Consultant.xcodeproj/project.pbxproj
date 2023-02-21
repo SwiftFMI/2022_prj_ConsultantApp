@@ -23,8 +23,8 @@
 		263F3EC12997AB040095F0EA /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263F3EC02997AB040095F0EA /* SignInView.swift */; };
 		263F3EC42997D4280095F0EA /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263F3EC32997D4280095F0EA /* SignUpView.swift */; };
 		263F3EC62997EF2C0095F0EA /* CheckboxToggleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263F3EC52997EF2C0095F0EA /* CheckboxToggleStyle.swift */; };
-		26C7270D29A0F2870087142C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 26C7270C29A0F2870087142C /* GoogleService-Info.plist */; };
 		26C7271029A0F5EC0087142C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C7270F29A0F5EC0087142C /* HomeView.swift */; };
+		B71CD99129A4DE70006ECCE3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B71CD99029A4DE70006ECCE3 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,8 +60,8 @@
 		263F3EC02997AB040095F0EA /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		263F3EC32997D4280095F0EA /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		263F3EC52997EF2C0095F0EA /* CheckboxToggleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxToggleStyle.swift; sourceTree = "<group>"; };
-		26C7270C29A0F2870087142C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		26C7270F29A0F5EC0087142C /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		B71CD99029A4DE70006ECCE3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,8 +117,8 @@
 		263F3E90299650D30095F0EA /* Consultant */ = {
 			isa = PBXGroup;
 			children = (
+				B71CD99029A4DE70006ECCE3 /* GoogleService-Info.plist */,
 				26C7270E29A0F5C50087142C /* Home */,
-				26C7270C29A0F2870087142C /* GoogleService-Info.plist */,
 				263F3EC22997D4000095F0EA /* SignUp */,
 				263F3EBF2997AADF0095F0EA /* SignIn */,
 				263F3EBC29978FC50095F0EA /* Utils */,
@@ -313,7 +313,7 @@
 			files = (
 				263F3E9A299650D40095F0EA /* Preview Assets.xcassets in Resources */,
 				263F3E96299650D40095F0EA /* Assets.xcassets in Resources */,
-				26C7270D29A0F2870087142C /* GoogleService-Info.plist in Resources */,
+				B71CD99129A4DE70006ECCE3 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
