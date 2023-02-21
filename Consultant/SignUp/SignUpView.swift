@@ -19,32 +19,51 @@ struct SignUpView: View {
     
     var body: some View {
         VStack{
-            Text("Sign up")
+            Text("Sign Up")
                 .font(
                     .system(size: 34)
                     .weight(.heavy)
                 )
             Group {
                 ExtractedCredentialsView(model: $username, isUsername: true)
+                    .padding(.leading, 5)
+                    .background(Color("light"))
+                    .cornerRadius(20)
+                    .frame(width: 350)
                 ExtractedCredentialsView(model: $password, isUsername: false)
+                    .padding(.leading, 5)
+                    .background(Color("light"))
+                    .cornerRadius(20)
+                    .frame(width: 350)
                 ExtractedNamesView(model: $firstName, isFirstName: true)
+                    .padding(.leading, 5)
+                    .background(Color("light"))
+                    .cornerRadius(20)
+                    .frame(width: 350)
                 ExtractedNamesView(model: $lastName, isFirstName: false)
+                    .padding(.leading, 5)
+                    .background(Color("light"))
+                    .cornerRadius(20)
+                    .frame(width: 350)
             }
             Toggle("Consultant", isOn: $isConsultant)
                 .toggleStyle(CheckboxToggleStyle())
-                .padding()
+                .fontWeight(.bold)
+                .foregroundColor(Color("darkBlue"))
+                .padding(.top, 10)
             Toggle("Employer", isOn: $isEmployer)
                 .toggleStyle(CheckboxToggleStyle())
-                .padding()
-            Button("Create your profile") {
+                .fontWeight(.bold)
+                .foregroundColor(Color("darkBlue"))
+            Button("Create profile") {
                 signUp()
             }
             .buttonStyle(BlueButton())
-            
+            .padding(.top, 10)
             NavigationLink(destination: HomeView(), isActive: $userIsSignedIn){
                 EmptyView()
             }
-            }
+        }
     }
     
     func signUp() {
@@ -102,5 +121,5 @@ struct ExtractedNamesView: View {
         }
         .padding()
     }
-
+    
 }

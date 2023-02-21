@@ -12,44 +12,61 @@ struct SignInView: View {
     @State private var username = ""
     @State private var password = ""
     @State private var successfulSignIn = false
+    @State private var showErrorMsg = false
     
     var body: some View {
-            VStack{
-                Text("Sign in")
+        ZStack {
+            VStack {
+                Text("Sign In")
                     .font(
                         .system(size: 34)
                         .weight(.heavy)
                     )
                 Group{
                     ExtractedCredentialsView(model: $username, isUsername: true)
+                        .padding(.leading, 5)
+                        .background(Color("light"))
+                        .cornerRadius(20)
+                        .frame(width: 350)
                     ExtractedCredentialsView(model: $password, isUsername: false)
+                        .padding(.leading, 5)
+                        .background(Color("light"))
+                        .cornerRadius(20)
+                        .frame(width: 350)
+                    Text("Invalid credentials provided")
+                        .foregroundColor(Color("red"))
+                        .padding(.top, 5)
+                        .opacity(showErrorMsg ? 100 : 0)
                 }
-                Button("Sign in your profile"){
+                Button("Submit") {
                     signIn()
                 }
                 .buttonStyle(BlueButton())
+                .padding(.top, 5)
                 
-                    NavigationLink(destination: HomeView(), isActive: $successfulSignIn){
-                        EmptyView()
-                    }
+                NavigationLink(destination: HomeView(), isActive: $successfulSignIn){
+                    EmptyView()
+                }
             }
-
+        }
+        
     }
     
     func signIn() {
         Auth.auth().signIn(withEmail: username, password: password) { (result,error) in
             if error != nil {
                 print(error?.localizedDescription ?? "")
-                //show Alert for unsuccessful sign in
+                showErrorMsg = true;
             } else {
+                showErrorMsg = false;
                 successfulSignIn = true
                 print("success")
             }
         }
     }
 }
-    struct SignInView_Previews: PreviewProvider {
-        static var previews: some View {
-            SignInView()
-        }
+struct SignInView_Previews: PreviewProvider {
+    static var previews: some View {
+        SignInView()
     }
+}
