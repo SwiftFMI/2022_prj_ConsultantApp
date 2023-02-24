@@ -6,7 +6,9 @@
 //
 
 import SwiftUI
+import Foundation
 import Firebase
+import Combine
 
 struct SignUpView: View {
     @State private var username: String = ""
@@ -15,7 +17,9 @@ struct SignUpView: View {
     @State private var lastName: String = ""
     @State private var isConsultant: Bool = false
     @State private var isEmployer: Bool = false
-    @State private var userIsSignedIn = false
+    @State private var userIsSignedIn: Bool = false
+    @State private var showErrorMsg: Bool = false
+    @State private var errorMessage: String = ""
     
     var body: some View {
         VStack{
@@ -55,11 +59,16 @@ struct SignUpView: View {
                 .toggleStyle(CheckboxToggleStyle())
                 .fontWeight(.bold)
                 .foregroundColor(Color("darkBlue"))
+            Text(errorMessage)
+                .foregroundColor(Color("red"))
+                .padding(.top, 5)
+                .opacity(showErrorMsg ? 100 : 0)
+
             Button("Create profile") {
                 signUp()
             }
             .buttonStyle(BlueButton())
-            .padding(.top, 10)
+            .padding(.top, 30)
             NavigationLink(destination: HomeView(), isActive: $userIsSignedIn){
                 EmptyView()
             }
@@ -67,13 +76,54 @@ struct SignUpView: View {
     }
     
     func signUp() {
-        Auth.auth().createUser(withEmail: username, password: password) { (result,error) in
+        if (username.isEmpty || password.isEmpty || firstName.isEmpty || lastName.isEmpty) {
+            showErrorMsg = true;
+            errorMessage = "Please, fill in the required fields."
+            return
+        }
+        
+        if (!isEmployer && !isConsultant) {
+            showErrorMsg = true;
+            errorMessage = "Please, choose a role."
+            return
+        }
+        
+        Auth.auth().createUser(withEmail: username, password: password) {
+            (result, error) in
+            
             if error != nil { //password must be at least six characters
                 print(error?.localizedDescription ?? "")
-            } else {
-                print("success")
-                userIsSignedIn = true
+                showErrorMsg = true;
+                
+                let err = error! as NSError
+                switch err.code {
+                case AuthErrorCode.invalidEmail.rawValue:
+                    errorMessage = "Invalid email provided."
+                case AuthErrorCode.emailAlreadyInUse.rawValue:
+                    errorMessage = "A user with this email already exists."
+                case AuthErrorCode.weakPassword.rawValue:
+                    errorMessage = "Password must be at least 6 characters long."
+                case AuthErrorCode.accountExistsWithDifferentCredential.rawValue:
+                    errorMessage = "A user with this email already exists."
+                default:
+                    print("unknown error: \(err.localizedDescription)")
+                    errorMessage = "Failed to register user."
+                }
+                return
             }
+            
+            if result == nil {
+                showErrorMsg = true;
+                errorMessage = "Failed to register user."
+                return
+            }
+            
+            var userDetails = SignUpDetails(firstName: self.firstName, lastName: self.lastName, username: self.username, isEmployer: self.isEmployer, isConsultant: self.isConsultant)
+            
+            showErrorMsg = false;
+            errorMessage = ""
+            print("success")
+            userIsSignedIn = true
         }
         //add to database as employer and/or consultant
     }
@@ -86,40 +136,65 @@ struct SignUpView_Previews: PreviewProvider {
 }
 
 struct ExtractedCredentialsView: View {
+    
     @Binding var model: String
     let isUsername: Bool
+    let textLimit = 30
+    
     var body: some View {
         HStack {
             if isUsername {
                 Text("Username:")
                 TextField("", text: $model, prompt: Text("*required"))
                     .autocorrectionDisabled(true)
+                    .autocapitalization(.none)
+                    .onReceive(Just(model)) { _ in limitText(textLimit) }
             } else {
                 Text("Password:")
                 SecureField("", text: $model, prompt: Text("*required"))
                     .autocorrectionDisabled(true)
+                    .autocapitalization(.none)
+                    .onReceive(Just(model)) { _ in limitText(textLimit) }
             }
         }
         .padding()
     }
+    
+    //Function to keep text length in limits
+    func limitText(_ upper: Int) {
+        if model.count > upper {
+            model = String(model.prefix(upper))
+        }
+    }
 }
 
 struct ExtractedNamesView: View {
+    
     @Binding var model: String
     let isFirstName: Bool
+    let textLimit = 20
+    
     var body: some View {
         HStack {
             if isFirstName {
                 Text("First name:")
                 TextField("", text: $model, prompt: Text("*required"))
                     .autocorrectionDisabled(true)
+                    .onReceive(Just(model)) { _ in limitText(textLimit) }
             } else {
                 Text("Last name:")
                 TextField("", text: $model, prompt: Text("*required"))
                     .autocorrectionDisabled(true)
+                    .onReceive(Just(model)) { _ in limitText(textLimit) }
             }
         }
         .padding()
     }
     
+    //Function to keep text length in limits
+    func limitText(_ upper: Int) {
+        if model.count > upper {
+            model = String(model.prefix(upper))
+        }
+    }
 }

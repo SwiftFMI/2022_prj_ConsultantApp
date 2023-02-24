@@ -25,6 +25,7 @@
 		263F3EC62997EF2C0095F0EA /* CheckboxToggleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263F3EC52997EF2C0095F0EA /* CheckboxToggleStyle.swift */; };
 		26C7271029A0F5EC0087142C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C7270F29A0F5EC0087142C /* HomeView.swift */; };
 		B71CD99129A4DE70006ECCE3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B71CD99029A4DE70006ECCE3 /* GoogleService-Info.plist */; };
+		B7AB0F9A29A8EF4900EC150B /* SignUpDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AB0F9929A8EF4900EC150B /* SignUpDetails.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		263F3EC52997EF2C0095F0EA /* CheckboxToggleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxToggleStyle.swift; sourceTree = "<group>"; };
 		26C7270F29A0F5EC0087142C /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		B71CD99029A4DE70006ECCE3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B7AB0F9929A8EF4900EC150B /* SignUpDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpDetails.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,7 +177,8 @@
 		263F3EC22997D4000095F0EA /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
-				263F3EC32997D4280095F0EA /* SignUpView.swift */,
+				B7AB0F9C29A8EFF800EC150B /* Model */,
+				B74B74EF29A6C1E900E7D17E /* View */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -195,6 +198,22 @@
 				26C7270F29A0F5EC0087142C /* HomeView.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		B74B74EF29A6C1E900E7D17E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				263F3EC32997D4280095F0EA /* SignUpView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B7AB0F9C29A8EFF800EC150B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B7AB0F9929A8EF4900EC150B /* SignUpDetails.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -340,6 +359,7 @@
 			files = (
 				263F3EBE29978FE90095F0EA /* ButtonStyle.swift in Sources */,
 				26C7271029A0F5EC0087142C /* HomeView.swift in Sources */,
+				B7AB0F9A29A8EF4900EC150B /* SignUpDetails.swift in Sources */,
 				263F3EC42997D4280095F0EA /* SignUpView.swift in Sources */,
 				263F3E94299650D30095F0EA /* ContentView.swift in Sources */,
 				263F3EC12997AB040095F0EA /* SignInView.swift in Sources */,
