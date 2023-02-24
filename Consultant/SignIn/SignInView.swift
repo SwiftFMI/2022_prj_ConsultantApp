@@ -13,6 +13,7 @@ struct SignInView: View {
     @State private var password = ""
     @State private var successfulSignIn = false
     @State private var showErrorMsg = false
+    @State private var errorMessage: String = ""
     
     var body: some View {
         ZStack {
@@ -33,7 +34,7 @@ struct SignInView: View {
                         .background(Color("light"))
                         .cornerRadius(20)
                         .frame(width: 350)
-                    Text("Invalid credentials provided")
+                    Text(errorMessage)
                         .foregroundColor(Color("red"))
                         .padding(.top, 5)
                         .opacity(showErrorMsg ? 100 : 0)
@@ -54,14 +55,30 @@ struct SignInView: View {
     
     func signIn() {
         Auth.auth().signIn(withEmail: username, password: password) { (result,error) in
+            
             if error != nil {
+                
                 print(error?.localizedDescription ?? "")
                 showErrorMsg = true;
-            } else {
+                
+                let err = error! as NSError
+                switch err.code {
+                case AuthErrorCode.invalidEmail.rawValue:
+                    errorMessage = "Invalid email provided."
+                case AuthErrorCode.wrongPassword.rawValue:
+                    errorMessage = "Wrong credentials provided."
+                case AuthErrorCode.userNotFound.rawValue:
+                    errorMessage = "User not found."
+                default:
+                    print("unknown error: \(err.localizedDescription)")
+                    errorMessage = "Failed to sign in"
+                }
+                return
+            }
                 showErrorMsg = false;
                 successfulSignIn = true
                 print("success")
-            }
+            
         }
     }
 }

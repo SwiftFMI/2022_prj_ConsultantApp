@@ -22,7 +22,7 @@ struct SignUpView: View {
     @State private var errorMessage: String = ""
     
     var body: some View {
-        VStack{
+        VStack {
             Text("Sign Up")
                 .font(
                     .system(size: 34)
@@ -119,14 +119,35 @@ struct SignUpView: View {
             }
             
             var userDetails = SignUpDetails(firstName: self.firstName, lastName: self.lastName, username: self.username, isEmployer: self.isEmployer, isConsultant: self.isConsultant)
-            
+
             showErrorMsg = false;
             errorMessage = ""
             print("success")
             userIsSignedIn = true
+            
+//            addUserToDB(user: userDetails)
         }
-        //add to database as employer and/or consultant
     }
+    
+//    func addUserToDB(user: SignUpDetails) {
+//        guard let currentUser = Auth.auth().currentUser else { return }
+//        var docRef = Firestore.firestore().collection("Users").document(currentUser.uid);
+//        
+//        do {
+//            let _ = try docRef.setData([
+//                "firstName": user.firstName,
+//                "firstName": user.lastName,
+//                "username": user.username
+//            ])
+//            let _ = try docRef.setData([
+//                "isEmployer": user.isEmployer,
+//                "isConsultant": user.isConsultant
+//            ])
+//        }
+//        catch {
+//            print(error.localizedDescription)
+//        }
+//    }
 }
 
 struct SignUpView_Previews: PreviewProvider {

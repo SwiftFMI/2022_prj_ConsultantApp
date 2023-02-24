@@ -2,20 +2,30 @@
 //  HomeView.swift
 //  Consultant
 //
-//  Created by Delyana Raykova on 18.02.23.
-//
 
 import SwiftUI
 
+struct TestUser {
+    let isEmployer: Bool
+    let isConsultant: Bool
+}
+
 struct HomeView: View {
+//    @ObservedObject var userService = UserService()
+    
+    let user = TestUser(isEmployer: true, isConsultant: false)
     
     var body: some View {
-        Text("Home")
-        //maybe a consultant can have their own home view with all adverisements
-        //and a check if they are also employers - a button to add advertisements
-        //
-        //if the only role is employer - they only have a button to create an ad
-        //and maybe show their own ads, that they created?
+        if (user.isEmployer && user.isConsultant) {
+            MixedHomeView()
+        } else {
+            if (user.isEmployer) {
+                EmployerHomeView()
+            }
+            else {
+                ConsultantHomeView()
+            }
+        }
     }
 }
 

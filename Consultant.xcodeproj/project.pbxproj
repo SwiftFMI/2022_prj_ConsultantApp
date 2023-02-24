@@ -26,6 +26,11 @@
 		26C7271029A0F5EC0087142C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C7270F29A0F5EC0087142C /* HomeView.swift */; };
 		B71CD99129A4DE70006ECCE3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B71CD99029A4DE70006ECCE3 /* GoogleService-Info.plist */; };
 		B7AB0F9A29A8EF4900EC150B /* SignUpDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AB0F9929A8EF4900EC150B /* SignUpDetails.swift */; };
+		B7AB0F9E29A9168100EC150B /* HomeUserDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AB0F9D29A9168100EC150B /* HomeUserDetails.swift */; };
+		B7AB0FA129A9184800EC150B /* MixedHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AB0FA029A9184800EC150B /* MixedHomeView.swift */; };
+		B7AB0FA329A9186500EC150B /* ConsultantHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AB0FA229A9186500EC150B /* ConsultantHomeView.swift */; };
+		B7AB0FA529A9187D00EC150B /* Employer1HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AB0FA429A9187D00EC150B /* Employer1HomeView.swift */; };
+		B7AB0FA829A9485B00EC150B /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AB0FA729A9485B00EC150B /* ProfileView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +69,11 @@
 		26C7270F29A0F5EC0087142C /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		B71CD99029A4DE70006ECCE3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B7AB0F9929A8EF4900EC150B /* SignUpDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpDetails.swift; sourceTree = "<group>"; };
+		B7AB0F9D29A9168100EC150B /* HomeUserDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeUserDetails.swift; sourceTree = "<group>"; };
+		B7AB0FA029A9184800EC150B /* MixedHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixedHomeView.swift; sourceTree = "<group>"; };
+		B7AB0FA229A9186500EC150B /* ConsultantHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultantHomeView.swift; sourceTree = "<group>"; };
+		B7AB0FA429A9187D00EC150B /* Employer1HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employer1HomeView.swift; sourceTree = "<group>"; };
+		B7AB0FA729A9485B00EC150B /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				B71CD99029A4DE70006ECCE3 /* GoogleService-Info.plist */,
+				B7AB0FA629A9482C00EC150B /* Profile */,
 				26C7270E29A0F5C50087142C /* Home */,
 				263F3EC22997D4000095F0EA /* SignUp */,
 				263F3EBF2997AADF0095F0EA /* SignIn */,
@@ -196,6 +207,10 @@
 			isa = PBXGroup;
 			children = (
 				26C7270F29A0F5EC0087142C /* HomeView.swift */,
+				B7AB0F9D29A9168100EC150B /* HomeUserDetails.swift */,
+				B7AB0FA029A9184800EC150B /* MixedHomeView.swift */,
+				B7AB0FA229A9186500EC150B /* ConsultantHomeView.swift */,
+				B7AB0FA429A9187D00EC150B /* Employer1HomeView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -214,6 +229,14 @@
 				B7AB0F9929A8EF4900EC150B /* SignUpDetails.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		B7AB0FA629A9482C00EC150B /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				B7AB0FA729A9485B00EC150B /* ProfileView.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -358,11 +381,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				263F3EBE29978FE90095F0EA /* ButtonStyle.swift in Sources */,
+				B7AB0FA829A9485B00EC150B /* ProfileView.swift in Sources */,
 				26C7271029A0F5EC0087142C /* HomeView.swift in Sources */,
 				B7AB0F9A29A8EF4900EC150B /* SignUpDetails.swift in Sources */,
 				263F3EC42997D4280095F0EA /* SignUpView.swift in Sources */,
+				B7AB0FA329A9186500EC150B /* ConsultantHomeView.swift in Sources */,
 				263F3E94299650D30095F0EA /* ContentView.swift in Sources */,
+				B7AB0FA529A9187D00EC150B /* Employer1HomeView.swift in Sources */,
+				B7AB0FA129A9184800EC150B /* MixedHomeView.swift in Sources */,
 				263F3EC12997AB040095F0EA /* SignInView.swift in Sources */,
+				B7AB0F9E29A9168100EC150B /* HomeUserDetails.swift in Sources */,
 				263F3EC62997EF2C0095F0EA /* CheckboxToggleStyle.swift in Sources */,
 				263F3E92299650D30095F0EA /* ConsultantApp.swift in Sources */,
 			);
