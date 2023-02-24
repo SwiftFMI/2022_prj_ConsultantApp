@@ -13,7 +13,7 @@
 		2601D6F3299929B00004AB3B /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2601D6F2299929B00004AB3B /* FirebaseDatabaseSwift */; };
 		2601D6F5299929B00004AB3B /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 2601D6F4299929B00004AB3B /* FirebaseStorage */; };
 		263F3E92299650D30095F0EA /* ConsultantApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263F3E91299650D30095F0EA /* ConsultantApp.swift */; };
-		263F3E94299650D30095F0EA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263F3E93299650D30095F0EA /* ContentView.swift */; };
+		263F3E94299650D30095F0EA /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263F3E93299650D30095F0EA /* WelcomeView.swift */; };
 		263F3E96299650D40095F0EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 263F3E95299650D40095F0EA /* Assets.xcassets */; };
 		263F3E9A299650D40095F0EA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 263F3E99299650D40095F0EA /* Preview Assets.xcassets */; };
 		263F3EA4299650D40095F0EA /* ConsultantTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263F3EA3299650D40095F0EA /* ConsultantTests.swift */; };
@@ -53,7 +53,7 @@
 /* Begin PBXFileReference section */
 		263F3E8E299650D30095F0EA /* Consultant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Consultant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		263F3E91299650D30095F0EA /* ConsultantApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultantApp.swift; sourceTree = "<group>"; };
-		263F3E93299650D30095F0EA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		263F3E93299650D30095F0EA /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		263F3E95299650D40095F0EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		263F3E97299650D40095F0EA /* Consultant.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Consultant.entitlements; sourceTree = "<group>"; };
 		263F3E99299650D40095F0EA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -136,7 +136,7 @@
 				263F3EBF2997AADF0095F0EA /* SignIn */,
 				263F3EBC29978FC50095F0EA /* Utils */,
 				263F3E91299650D30095F0EA /* ConsultantApp.swift */,
-				263F3E93299650D30095F0EA /* ContentView.swift */,
+				263F3E93299650D30095F0EA /* WelcomeView.swift */,
 				263F3E95299650D40095F0EA /* Assets.xcassets */,
 				263F3E97299650D40095F0EA /* Consultant.entitlements */,
 				263F3E98299650D40095F0EA /* Preview Content */,
@@ -386,7 +386,7 @@
 				B7AB0F9A29A8EF4900EC150B /* SignUpDetails.swift in Sources */,
 				263F3EC42997D4280095F0EA /* SignUpView.swift in Sources */,
 				B7AB0FA329A9186500EC150B /* ConsultantHomeView.swift in Sources */,
-				263F3E94299650D30095F0EA /* ContentView.swift in Sources */,
+				263F3E94299650D30095F0EA /* WelcomeView.swift in Sources */,
 				B7AB0FA529A9187D00EC150B /* Employer1HomeView.swift in Sources */,
 				B7AB0FA129A9184800EC150B /* MixedHomeView.swift in Sources */,
 				263F3EC12997AB040095F0EA /* SignInView.swift in Sources */,
