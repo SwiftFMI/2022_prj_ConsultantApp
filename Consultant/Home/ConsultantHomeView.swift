@@ -30,6 +30,7 @@ struct ConsultantHomeView: View {
                     Text("Search")
             }
         }
+        .animation(.default)
     }
     
 }

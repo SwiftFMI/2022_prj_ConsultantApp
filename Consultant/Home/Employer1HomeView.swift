@@ -8,27 +8,34 @@ import Foundation
 import SwiftUI
 
 struct EmployerHomeView: View {
+//    @EnvirinmentObject var authenticationService: AuthenticationService
+    
+    let testAuthenticated = true
     
     var body: some View {
-        TabView {
-            ProfileView()
-                .tabItem {
-                    Image(systemName: "person.circle")
-                    Text("Profile")
-            }
-            
-            // Employers's ads
-            UsersAdsView()
-                .tabItem {
-                    Image(systemName: "house")
-                    Text("Home")
+        if (testAuthenticated)
+        {
+            TabView {
+                ProfileView()
+                    .tabItem {
+                        Image(systemName: "person.circle")
+                        Text("Profile")
+                }
+                
+                // Employers's ads
+                UsersAdsView()
+                    .tabItem {
+                        Image(systemName: "house")
+                        Text("Home")
 
+                }
+                CreateAdView()
+                    .tabItem {
+                        Image(systemName: "plus")
+                        Text("Advertise")
+                }
             }
-            CreateAdView()
-                .tabItem {
-                    Image(systemName: "plus")
-                    Text("Advertise")
-            }
+            .animation(.default)
         }
     }
     

@@ -43,6 +43,7 @@ struct MixedHomeView: View {
                     Text("Advertise")
             }
         }
+        .animation(.default)
     }
     
 }

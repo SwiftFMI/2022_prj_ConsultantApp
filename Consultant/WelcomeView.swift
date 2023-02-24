@@ -1,12 +1,12 @@
 //
-//  ContentView.swift
+//  WelcomeView.swift
 //  Consultant
 //
 //
 
 import SwiftUI
 
-struct ContentView: View {
+struct WelcomeView: View {
     
     var body: some View {
         NavigationView {
@@ -30,11 +30,12 @@ struct ContentView: View {
                 .padding()
             }
         }
+        .navigationBarBackButtonHidden(true)
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct WelcomeView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        WelcomeView()
     }
 }
