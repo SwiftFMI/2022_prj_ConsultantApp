@@ -7,7 +7,10 @@
 
 import SwiftUI
 import Foundation
-import Firebase
+import FirebaseAuth
+import FirebaseDatabase
+import FirebaseFirestore
+import FirebaseStorage
 import Combine
 
 struct SignUpView: View {
@@ -125,29 +128,27 @@ struct SignUpView: View {
             print("success")
             userIsSignedIn = true
             
-//            addUserToDB(user: userDetails)
+            addUserToDB(user: userDetails)
         }
     }
     
-//    func addUserToDB(user: SignUpDetails) {
-//        guard let currentUser = Auth.auth().currentUser else { return }
-//        var docRef = Firestore.firestore().collection("Users").document(currentUser.uid);
-//        
-//        do {
-//            let _ = try docRef.setData([
-//                "firstName": user.firstName,
-//                "firstName": user.lastName,
-//                "username": user.username
-//            ])
-//            let _ = try docRef.setData([
-//                "isEmployer": user.isEmployer,
-//                "isConsultant": user.isConsultant
-//            ])
-//        }
-//        catch {
-//            print(error.localizedDescription)
-//        }
-//    }
+    func addUserToDB(user: SignUpDetails) {
+        guard let currentUser = Auth.auth().currentUser else { return }
+        var docRef = Firestore.firestore().collection("Users").document(currentUser.uid);
+        
+        do {
+            let _ = try docRef.setData([
+                "firstName": user.firstName,
+                "lastName": user.lastName,
+                "username": user.username,
+                "isEmployer": user.isEmployer,
+                "isConsultant": user.isConsultant
+            ])
+        }
+        catch {
+            print(error.localizedDescription)
+        }
+    }
 }
 
 struct SignUpView_Previews: PreviewProvider {

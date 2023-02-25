@@ -11,7 +11,7 @@ struct TestUser {
 }
 
 struct HomeView: View {
-//    @ObservedObject var userService = UserService()
+    //@ObservedObject var userService : UserService(user)
     
     let user = TestUser(isEmployer: true, isConsultant: false)
     

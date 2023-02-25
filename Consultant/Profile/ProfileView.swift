@@ -8,6 +8,7 @@ import Foundation
 import SwiftUI
 
 struct ProfileView: View {
+    //@Published var user: User 
     
     var body: some View {
         NavigationView {
@@ -54,6 +55,10 @@ struct ProfileView: View {
             }
             .padding(.top, 10)
         }
+        
+    }
+    
+    func fetchUserDetails() {
         
     }
     
